@@ -1,0 +1,136 @@
+{
+ "note": "post hoc robustness check of section 4.3 by language family; see module docstring",
+ "n_treebanks": 26,
+ "n_families": 9,
+ "treebanks_per_family": {
+  "Afro-Asiatic": 2,
+  "Austronesian": 1,
+  "Indo-European": 15,
+  "Japonic": 1,
+  "Koreanic": 1,
+  "Sino-Tibetan": 1,
+  "Turkic": 2,
+  "Uralic": 2,
+  "isolate": 1
+ },
+ "pooled_centred": {
+  "r": -0.9260492607127178,
+  "slope": -0.24968721683758388
+ },
+ "per_family": {
+  "Afro-Asiatic": {
+   "n_treebanks": 2,
+   "r": -0.9078778364493099,
+   "slope": -0.17335692025258279
+  },
+  "Austronesian": {
+   "n_treebanks": 1,
+   "r": -0.9517232940464058,
+   "slope": -0.19798174471486674
+  },
+  "Indo-European": {
+   "n_treebanks": 15,
+   "r": -0.9388962231612842,
+   "slope": -0.25939141611967986
+  },
+  "Japonic": {
+   "n_treebanks": 1,
+   "r": -0.8222754077715896,
+   "slope": -0.20088534217304146
+  },
+  "Koreanic": {
+   "n_treebanks": 1,
+   "r": -0.9203776328252034,
+   "slope": -0.22888247111305463
+  },
+  "Sino-Tibetan": {
+   "n_treebanks": 1,
+   "r": -0.9817173929568291,
+   "slope": -0.14841824081344462
+  },
+  "Turkic": {
+   "n_treebanks": 2,
+   "r": -0.9277656291505676,
+   "slope": -0.2974914790980442
+  },
+  "Uralic": {
+   "n_treebanks": 2,
+   "r": -0.9742319610312765,
+   "slope": -0.2754616408139667
+  },
+  "isolate": {
+   "n_treebanks": 1,
+   "r": -0.9624281360311573,
+   "slope": -0.3322085168383868
+  }
+ },
+ "leave_one_family_out": {
+  "Afro-Asiatic": {
+   "r": -0.9305112257070673,
+   "slope": -0.256048074886334
+  },
+  "Austronesian": {
+   "r": -0.9262521690147248,
+   "slope": -0.2517554357224926
+  },
+  "Indo-European": {
+   "r": -0.9084275117983625,
+   "slope": -0.23645421781654372
+  },
+  "Japonic": {
+   "r": -0.9299656506300401,
+   "slope": -0.2516392918241656
+  },
+  "Koreanic": {
+   "r": -0.9263733975891223,
+   "slope": -0.2505194066665651
+  },
+  "Sino-Tibetan": {
+   "r": -0.9284282911106936,
+   "slope": -0.25373797587854946
+  },
+  "Turkic": {
+   "r": -0.9274255489711959,
+   "slope": -0.24570352831587888
+  },
+  "Uralic": {
+   "r": -0.9219208539939775,
+   "slope": -0.2475393481728853
+  },
+  "isolate": {
+   "r": -0.9257128183346558,
+   "slope": -0.24638636483755177
+  }
+ },
+ "indo_european_vs_rest": {
+  "indo_european": {
+   "n_treebanks": 15,
+   "r": -0.9388962231612842,
+   "slope": -0.25939141611967986
+  },
+  "other": {
+   "n_treebanks": 11,
+   "r": -0.9084275117983625,
+   "slope": -0.23645421781654372
+  }
+ },
+ "family_cluster_bootstrap_slope": {
+  "n_resamples": 5000,
+  "ci95": [
+   -0.2680041739540961,
+   -0.20667410768519867
+  ],
+  "share_negative": 1.0
+ },
+ "mixed_model": {
+  "formula": "divergence ~ lam + (1 + lam | family) + (1 | treebank:family)",
+  "lam_coef": -0.23765507999009913,
+  "lam_se": 0.019803897118550354,
+  "lam_ci95": [
+   -0.2764700050959944,
+   -0.19884015488420387
+  ],
+  "lam_p": 3.534986579398343e-33,
+  "converged": true
+ }
+}
