@@ -1,0 +1,27 @@
+treebank_id,repo,family,licence,source
+en_ewt,UD_English-EWT,Indo-European,CC BY-SA 4.0,UD_English-EWT@r2.14/README
+de_gsd,UD_German-GSD,Indo-European,CC BY-SA 4.0,UD_German-GSD@r2.14/README
+fr_gsd,UD_French-GSD,Indo-European,CC BY-SA 4.0,UD_French-GSD@r2.14/README
+es_ancora,UD_Spanish-AnCora,Indo-European,CC BY 4.0,UD_Spanish-AnCora@r2.14/README
+ru_syntagrus,UD_Russian-SynTagRus,Indo-European,CC BY-NC-SA 4.0,UD_Russian-SynTagRus@r2.14/README
+pl_pdb,UD_Polish-PDB,Indo-European,CC BY-NC-SA 4.0,UD_Polish-PDB@r2.14/README
+cs_pdt,UD_Czech-PDT,Indo-European,CC BY-NC-SA 4.0,UD_Czech-PDT@r2.14/README
+it_isdt,UD_Italian-ISDT,Indo-European,CC BY-NC-SA 3.0,UD_Italian-ISDT@r2.14/README
+pt_bosque,UD_Portuguese-Bosque,Indo-European,CC BY-SA 4.0,UD_Portuguese-Bosque@r2.14/README
+hi_hdtb,UD_Hindi-HDTB,Indo-European,CC BY-NC-SA 4.0,UD_Hindi-HDTB@r2.14/README
+fa_seraji,UD_Persian-Seraji,Indo-European,CC BY-SA 4.0,UD_Persian-Seraji@r2.14/README
+el_gdt,UD_Greek-GDT,Indo-European,CC BY-NC-SA 3.0,UD_Greek-GDT@r2.14/README
+la_ittb,UD_Latin-ITTB,Indo-European,CC BY-NC-SA 3.0,UD_Latin-ITTB@r2.14/README
+ga_idt,UD_Irish-IDT,Indo-European,CC BY-SA 3.0,UD_Irish-IDT@r2.14/README
+lv_lvtb,UD_Latvian-LVTB,Indo-European,CC BY-SA 4.0,UD_Latvian-LVTB@r2.14/README
+fi_tdt,UD_Finnish-TDT,Uralic,CC BY-SA 4.0,UD_Finnish-TDT@r2.14/README
+et_edt,UD_Estonian-EDT,Uralic,CC BY-NC-SA 4.0,UD_Estonian-EDT@r2.14/README
+tr_imst,UD_Turkish-IMST,Turkic,CC BY-NC-SA 4.0,UD_Turkish-IMST@r2.14/README
+ug_udt,UD_Uyghur-UDT,Turkic,CC BY-SA 4.0,UD_Uyghur-UDT@r2.14/README
+ar_padt,UD_Arabic-PADT,Afro-Asiatic,CC BY-NC-SA 3.0,UD_Arabic-PADT@r2.14/README
+he_htb,UD_Hebrew-HTB,Afro-Asiatic,CC BY-NC-SA 4.0,UD_Hebrew-HTB@r2.14/README
+zh_gsd,UD_Chinese-GSD,Sino-Tibetan,CC BY-SA 4.0,UD_Chinese-GSD@r2.14/README
+ja_gsd,UD_Japanese-GSD,Japonic,CC BY-SA 4.0,UD_Japanese-GSD@r2.14/README
+ko_kaist,UD_Korean-Kaist,Koreanic,CC BY-SA 4.0,UD_Korean-Kaist@r2.14/README
+id_gsd,UD_Indonesian-GSD,Austronesian,CC BY-SA 4.0,UD_Indonesian-GSD@r2.14/README
+eu_bdt,UD_Basque-BDT,isolate,CC BY-NC-SA 3.0,UD_Basque-BDT@r2.14/README
