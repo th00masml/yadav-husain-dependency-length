@@ -1,6 +1,6 @@
 # Dependency Length Minimization: Words or Intervening Heads?
 
-A laptop-scale replication attempt of Yadav & Husain's claim that the standard
+A laptop-scale replication attempt of Yadav, Mittal & Husain's (2022) claim that the standard
 word-based operationalization of dependency length is the wrong measure.
 
 **Status:** full run complete, plus a controlled follow-up experiment.
@@ -24,27 +24,30 @@ tidied away.
 
 ## Write-up
 
-`paper/dlm_baseline_difficulty.md` is a draft write-up of what this repository
-found, aimed at readers who compute dependency length rather than at readers of
-this codebase. It argues the general result (baseline difficulty controls the
-direction of the comparison) with Yadav & Husain as the test case, and reports
-the two statistics that produced their own results, including one of our own
-mis-specified predictions.
+`paper/main.tex` is the preprint (LaTeX, with `refs.bib`; compile with
+`pdflatex main && bibtex main && pdflatex main && pdflatex main` inside
+`paper/`). It argues the general result (baseline difficulty controls the
+direction of the comparison) with Yadav et al. (2022) as the test case, places
+it in the DLM literature (related work, Section 2), and reports the two
+statistics that produced their own results, including one of our own
+mis-specified predictions. Its tables are generated from committed results by
+`paper/make_tables.py`; Figure 1 by `plot_sweep.py`.
 
-**It is a draft and has not been submitted anywhere.** Every number in it is
-checked against the committed results.
+**Not submitted yet.** Every number in it is checked against the committed
+results. The earlier Markdown draft (`paper/dlm_baseline_difficulty.md`) is
+superseded and was removed; it is in the git history.
 
 ---
 
 ## Paper under test
 
-> Yadav, H., & Husain, S. (2022). *A Reappraisal of Dependency Length
-> Minimization as a Linguistic Universal.* **Open Mind: Discoveries in
-> Cognitive Science**, MIT Press.
+> Yadav, H., Mittal, S., & Husain, S. (2022). *A Reappraisal of Dependency
+> Length Minimization as a Linguistic Universal.* **Open Mind: Discoveries in
+> Cognitive Science**, 6, 147–168. https://doi.org/10.1162/opmi_a_00060
 
 **The paper's claim.** Dependency length minimization (DLM) is one of the
 most-cited quantitative universals in linguistics, and it is almost always
-measured by counting *words* between a head and its dependent. Yadav & Husain
+measured by counting *words* between a head and its dependent. Yadav et al.
 argue this is a proxy. What actually constrains processing, they claim, is the
 number of *intervening syntactic heads*, and the familiar word-based DLM effect
 is a derivative consequence of that plus tree properties such as node arity.
@@ -271,7 +274,7 @@ varying difficulty alone.
 On the paper's own question, the honest summary is: **head_DL shows the larger
 effect on the magnitude reading under both baselines** (26/26 under B1, 18/26
 under B2), and the rank reading is unreliable under B1 for the reason above.
-That is qualified support for Yadav & Husain's comparative claim, arrived at by
+That is qualified support for Yadav et al.'s comparative claim, arrived at by
 a route the pre-registration did not anticipate, and it should not be reported
 as a clean confirmation.
 
@@ -498,7 +501,7 @@ not misread as a refutation of DLM.
 ## Limitations
 
 - **The headline H2 disagreement is a baseline artifact.** Rank and magnitude
-  point opposite ways in 17/17 treebanks under B1 but only 3/17 under B2. B1 is
+  point opposite ways in 26/26 treebanks under B1 but only 6/26 under B2. B1 is
   weak enough to saturate rank statistics, which manufactures the split. Any
   DLM result resting on a single baseline and a single effect measure should be
   treated as provisional for this reason.
@@ -517,7 +520,13 @@ not misread as a refutation of DLM.
   count from 17 to 26 did not fix this, because most of the newly admitted
   treebanks are also Indo-European. Non-IE families are represented by one or
   two treebanks each, so any claim about typological generality rests on very
-  few independent observations per family. Three configured treebanks remain
+  few independent observations per family. `experiment_family_sensitivity.py`
+  (results in `results/family_sensitivity.json`) shows that no family drives
+  or reverses the λ-sweep trend: the within-treebank correlation is negative in
+  all 9 families, leaving any one family out keeps it between −0.931 and
+  −0.908, and a mixed model with family random slopes gives −0.238 (95% CI
+  −0.276 to −0.199). It cannot show the trend holds for unsampled families.
+  Three configured treebanks remain
   unanalyzed: `am_att` is test-only upstream, `ta_ttb` (400 sentences) and
   `hu_szeged` (908) fall below the 1,500-sentence floor.
 - **β(head_DL) carries the wrong sign in 18 of 26 languages under B1.** Whatever
@@ -553,6 +562,15 @@ not misread as a refutation of DLM.
 
 ## Data and license
 
-Universal Dependencies v2.14, CC BY-SA. Treebanks are downloaded per-corpus
-from the UD GitHub organization and cached in `data/raw/` (gitignored). No data
-is redistributed in this repository beyond the 30-sentence test fixture.
+Universal Dependencies v2.14 (Zeman et al. 2024, http://hdl.handle.net/11234/1-5502).
+Licences differ by treebank and are recorded per treebank in
+`results/treebank_licences.csv` (read from each treebank's README at tag r2.14
+by `fetch_licences.py`): 14 of the 26 analysed treebanks are CC BY or
+CC BY-SA, and **12 are CC BY-NC-SA** (ru_syntagrus, pl_pdb, cs_pdt, it_isdt,
+hi_hdtb, el_gdt, la_ittb, et_edt, tr_imst, ar_padt, he_htb, eu_bdt).
+Treebanks are downloaded per corpus from the UD GitHub organization and cached
+in `data/raw/` (gitignored). No treebank text is redistributed: `results/`
+holds per-treebank aggregate statistics only, and the test fixture
+`tests/fixtures/mini.conllu` is hand-constructed.
+
+Code: MIT, see `LICENSE`.
